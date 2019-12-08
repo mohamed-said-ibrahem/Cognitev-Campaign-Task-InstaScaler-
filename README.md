@@ -1,4 +1,4 @@
-#Business Problem
+# Business Problem
 Being online business requires special marketing skills. Creating campaigns, managing
 </br>
 campaigns and making sure that the money spent to get traffic from different advertising
@@ -10,7 +10,7 @@ Being an online businesses you need to focus on the core functionality they do i
 wasting time, money and effort managing your digital campaigns
 </br></br>
 
-#Tasks
+# Tasks
 1. Create a RESTful ​ campaign ​ resource. Campaign data will be
 </br>
 a. Name
@@ -23,7 +23,7 @@ d. Goal
 </br>
 e. category. If category is not provided you need to extract it from the provided
 </br></br>
-#*dummy* category extraction service.
+# *dummy* category extraction service.
 </br>
 2. Create a reporting endpoint that accepts
 </br>
@@ -37,7 +37,7 @@ c. Duration [​ start and end dates​ ]
 </br>
 in point 2)
 </br>
-#Example: 
+# Example: 
 </br>
 if the provided data are
 </br>
