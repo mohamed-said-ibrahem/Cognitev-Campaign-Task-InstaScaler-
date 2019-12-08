@@ -11,6 +11,7 @@ wasting time, money and effort managing your digital campaigns
 </br></br>
 
 # Tasks
+
 1. Create a RESTful ​ campaign ​ resource. Campaign data will be
 </br>
 a. Name
@@ -23,7 +24,7 @@ d. Goal
 </br>
 e. category. If category is not provided you need to extract it from the provided
 </br></br>
-# *dummy* category extraction service.
+# "dummy" category extraction service.
 </br>
 2. Create a reporting endpoint that accepts
 </br>
