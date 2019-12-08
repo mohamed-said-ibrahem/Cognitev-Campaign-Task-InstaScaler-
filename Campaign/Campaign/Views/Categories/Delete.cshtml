@@ -1,0 +1,41 @@
+﻿@model Campaign.Models.CategoryCompaign
+
+@{
+    ViewData["Title"] = "Delete";
+    ViewData["Main"] = "Category";
+}
+
+
+<div class="col-sm-12 col-md-12 internal_page">
+    <div class="card">
+        <div class="card-header">
+            <i class="fa fa-trash-o"></i> Are you sure to delete this ?
+        </div>
+        <div class="card-body no_form">
+            <dl class="row">
+                <dt class="col-md-3">
+                    @Html.DisplayNameFor(model => model.Name)
+                </dt>
+                <dd class="col-md-9">
+                    @Html.DisplayFor(model => model.Name)
+                </dd>
+                <dt class="col-md-3">
+                    @Html.DisplayNameFor(model => model.CreateDate)
+                </dt>
+                <dd class="col-md-9">
+                    @Html.DisplayFor(model => model.CreateDate)
+                </dd>
+            </dl>
+
+            <form asp-action="Delete">
+                <div class="col-12 float-right d-block text-right">
+                    <div class="form-group">
+                        <input type="hidden" asp-for="Id" />
+                        <input type="submit" value="Delete" class="btn my_btn red_btn" />
+                        <a asp-action="Index" class="cancel btn ml-2">Cancel</a>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,38 @@
+﻿@model Campaign.Models.CategoryCompaign
+
+@{
+    ViewData["Title"] = "Create";
+    ViewData["Main"] = "Category";
+}
+
+
+<div class="nav nav-tabs     mt-5 p-4 md-tabs text-white" id="myTabMD" role="tablist">
+    <h5>  @ViewData["Title"]</h5>
+</div>
+<div class="tab-content  card pt-5 mb-5 overflow-hidden" id="myTabContentMD">
+    <form asp-action="Create">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <div class="form-group row">
+            <label asp-for="Name" class="col-xl-2 col-lg-3 col-form-label"></label>
+            <div class="col-xl-10 col-lg-9">
+                <input asp-for="Name" class="form-control" />
+                <small><span asp-validation-for="Name" class="form-text text-danger"></span></small>
+            </div>
+        </div>
+        <div class="form-group row">
+            <div class="col-xl-10 col-lg-9">
+                <input type="hidden" asp-for="CreateDate" value="@DateTime.UtcNow.ToUniversalTime()">
+            </div>
+        </div>
+        <div class="col-12 float-right d-block text-right">
+            <div class="form-group">
+                <button type="submit" readonly class="btn my_btn  btn-sm btn-blue  red_btn">Save</button>
+                <a asp-action="Index" class="cancel btn btn-outline-default waves-effect  btn-sm ml-2">Cancel</a>
+            </div>
+        </div>
+    </form>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

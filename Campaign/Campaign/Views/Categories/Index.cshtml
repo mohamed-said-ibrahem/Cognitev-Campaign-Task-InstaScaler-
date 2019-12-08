@@ -1,0 +1,60 @@
+﻿@{var controllerName = ViewContext.RouteData.Values["controller"].ToString();}
+
+@model IEnumerable<Campaign.Models.CategoryCompaign>
+
+@{
+    ViewData["Title"] = "Category";
+}
+
+<div class="nav nav-tabs     mt-5 p-4 md-tabs text-white" id="myTabMD" role="tablist">
+    <h5>  @ViewData["Title"]</h5>
+</div>
+<div class="tab-content  card pt-5 mb-5 overflow-hidden" id="myTabContentMD">
+    <a asp-action="Create" class="btn my_btn  btn-blue  btn-create btn-sm"><i class="fa fa-file"></i> Create New</a>
+    <div class="table-fix ">
+        <table class="datatable table table-striped table-bordered">
+            <thead>
+                <tr>
+                    <th class="d-none">
+                        @Html.DisplayNameFor(model => model.Id)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Name)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.CreateDate)
+                    </th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td class="d-none">
+                            @Html.DisplayFor(modelItem => item.Id)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Name)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.CreateDate)
+                        </td>
+                        <td>
+                            <div class="dropdown data-table-dropdown">
+                                <button class="btn my_btn btn-sm" data-toggle="dropdown">
+                                    <i class="fa fa-cog" aria-hidden="true"></i> Actions
+                                </button>
+                                <div class="dropdown-menu dropdown-menu-right">
+                                    <a class="dropdown-item" asp-action="Edit" asp-route-id="@item.Id"><i class="fa fa-pencil"></i> Edit </a>
+                                    <a class="dropdown-item" title="Delete Item" onclick='DeleteRow("/Admin/@controllerName/JsonDelete/@item.Id")'><i class="fa fa-trash-o"></i> Delete </a>
+                                    <a class="dropdown-item Duplicate" title="Duplicate item" onclick='DuplicateRow("/Admin/@controllerName/JsonDuplicate/@item.Id")'><i class="fa fa-clone"></i> Duplicate </a>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

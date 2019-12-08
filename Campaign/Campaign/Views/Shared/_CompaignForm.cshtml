@@ -1,0 +1,90 @@
+﻿@model Compaign
+
+@{
+    var countries = common.GetCountry();
+    var categories = common.GetCategory();
+}
+<form class="row" data-iframe-height="1" method="post" id="form" action="/home/create" data-form-id="4820873" data-loader-type="viewer" data-num-children="1" data-instructions-text-alignment="left" data-label-text-alignment="left" data-text-direction="ltr" data-label-placement="top" data-layout-type="desktop" data-theme-is-ready="1" data-has-fixed-header="">
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    <div class="col-12" data-role="page" data-type="page" data-hash="00000006" data-type-id="90001" data-colspan="20" data-num-children="3" data-page-index="0" data-is-first-page="1" data-is-current-page="1" data-is-last-page="yes" data-is-active="1">
+        <div data-role="page-header">
+            <div data-role="control" data-type="form-header" data-hash="00000002" data-type-id="27" data-colspan="20" id="form-heading-00000002-acc" aria-labelledby="form-heading-00000002-acc" data-i18n-html="Headline">
+                <h1 style="text-align: center;">Compaign</h1>
+                <p style=" text-align: center;" class="mt-3">Please enter your details below.</p>
+            </div>
+        </div>
+        <div class="row" data-role="page-body">
+            <div id="success" class="alert alert-success text-center  d-none  mt-2">Compaign created successfully!</div>
+            <div id="danger" class="alert alert-danger text-center d-none mt-2">Something wrong happened!</div>
+            <div id="exist" class="alert alert-warning text-center d-none mt-2">Sorry this category on this country already exist!</div>
+            <div class="col-12" data-role="container" data-type="virtual-form-table-row" data-hash="00000007" data-type-id="0" data-colspan="20" data-num-children="2">
+                <div class="row" data-role="control" data-type="text" data-hash="00000008" data-type-id="23" data-colspan="10" data-is-required="1" data-renderer-type="tln" data-id="53595849">
+                    <label data-role="label" id="text-00000008-acc" data-i18n-text="control_label_53595849">Name</label>
+                    <dt data-role="instructions" id="text-00000008-instr-acc" data-is-empty="1" data-i18n-text="control_instructions_53595849"></dt>
+                    <div data-role="input-row" data-is-first-row="1" data-is-last-row="1" data-fill-colspan="0">
+                        <input type="text" class="form-control" data-role="i123-input" aria-labelledby="text-00000008-acc text-00000008-error-acc text-00000008-instr-acc" data-size="full" asp-for="Name" value="">
+                    </div>
+                    <small>  <span asp-validation-for="Name" class="text-danger"></span></small>
+                </div>
+                <div class="row" data-role="control" data-type="drop-down" data-hash="00000009" data-type-id="4" data-colspan="10" data-renderer-type="tln" data-id="53595853">
+                    <label data-role="label" id="dropdown-00000009-acc" data-i18n-text="control_label_53595853">Country</label>
+                    <dt data-role="instructions" id="dropdown-00000009-instr-acc" data-is-empty="1" data-i18n-text="control_instructions_53595853"></dt>
+                    <div  data-role="input-row" data-is-first-row="1" data-is-last-row="1" data-fill-colspan="0">
+                        <div class=" m-0 pr-0">
+                            <select class="form-control" asp-for="CountryId" asp-items="@countries">
+                                <option selected value="">Choose Country</option>
+                            </select>
+
+                        </div>
+                    </div>
+                    <small>  <span asp-validation-for="CountryId" class="text-danger"></span></small>
+
+                </div>
+            </div>
+            <div data-role="container" data-type="virtual-form-table-row" data-hash="0000000a" data-type-id="0" data-colspan="20" data-num-children="2">
+                <div data-role="control" data-type="text" data-hash="0000000b" data-type-id="23" data-colspan="10" data-is-required="1" data-renderer-type="tln" data-id="53595824">
+                    <label data-role="label" id="text-0000000b-acc" data-i18n-text="control_label_53595824">Budget</label>
+                    <dt data-role="instructions" id="text-0000000b-instr-acc" data-is-empty="1" data-i18n-text="control_instructions_53595824"></dt>
+                    <div data-role="input-row" data-is-first-row="1" data-is-last-row="1" data-fill-colspan="0">
+                        @*<input type="text" asp-for="Budget" value="" data-role="i123-input" aria-labelledby="text-0000000b-acc text-0000000b-error-acc text-0000000b-instr-acc" data-size="full">*@
+                        <select class="form-control" asp-for="Budget">
+                            <option selected value="">Choose Budget</option>
+                            <option value="149">149</option>
+                            <option value="399">399</option>
+                            <option value="999">999</option>
+                        </select>
+                    </div>
+                    <small>  <span asp-validation-for="Budget" class="text-danger"></span></small>
+                </div>
+                <div data-role="control" data-type="text" data-hash="0000000c" data-type-id="23" data-colspan="10" data-is-required="1" data-renderer-type="tln" data-id="53595878">
+                    <label data-role="label" id="text-0000000c-acc" data-i18n-text="control_label_53595878">Goal</label>
+                    <dt data-role="instructions" id="text-0000000c-instr-acc" data-is-empty="1" data-i18n-text="control_instructions_53595878"></dt>
+                    <div data-role="input-row" data-is-first-row="1" data-is-last-row="1" data-fill-colspan="0">
+                        <input type="text" asp-for="Goal" value="" data-role="i123-input" aria-labelledby="text-0000000c-acc text-0000000c-error-acc text-0000000c-instr-acc" data-size="full">
+                    </div>
+                    <small>  <span asp-validation-for="Goal" class="text-danger"></span></small>
+                </div>
+            </div>
+            <div data-role="container" data-type="virtual-form-table-row" data-hash="0000000d" data-type-id="0" data-colspan="20" data-num-children="1">
+                <div data-role="control" data-type="drop-down" data-hash="0000000e" data-type-id="4" data-colspan="20" data-renderer-type="tln" data-id="53595826">
+                    <label data-role="label" id="dropdown-0000000e-acc" data-i18n-text="control_label_53595826">Category</label>
+                    <dt data-role="instructions" id="dropdown-0000000e-instr-acc" data-is-empty="1" data-i18n-text="control_instructions_53595826"></dt>
+                    <div data-role="input-row" data-is-first-row="1" data-is-last-row="1" data-fill-colspan="0" class="row">
+                        <div class="col-6 m-0 pr-0">
+                            <select class="form-control" asp-for="CategoryId" asp-items="@categories">
+                                <option selected value="">Choose Category</option>
+                            </select>
+                        </div>
+                    </div>
+                    <small>  <span asp-validation-for="CategoryId" class="text-danger"></span></small>
+                </div>
+            </div>
+        </div>
+        <input type="hidden" asp-for="CreateDate" value="@DateTime.UtcNow.ToUniversalTime()">
+        <div data-role="page-footer">
+            <div data-role="control" data-type="form-action-bar" data-hash="00000003" data-type-id="29" data-colspan="20" data-buttons-position="2">
+                <button data-role="submit" type="submit" data-has-icon=""><span class="normal-state" data-i18n-text="SendButton">Submit the Compaign</span><span class="submit-state" data-i18n-text="textdef_132">Please wait...</span></button>
+            </div>
+        </div>
+    </div>
+</form>
