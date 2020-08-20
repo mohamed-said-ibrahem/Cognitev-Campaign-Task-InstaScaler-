@@ -1,49 +1,38 @@
 # Business Problem
-Being online business requires special marketing skills. Creating campaigns, managing
-</br>
-campaigns and making sure that the money spent to get traffic from different advertising
-</br>
-platforms became more challenging and time consuming.
-</br>
-Being an online businesses you need to focus on the core functionality they do instead of
-</br>
-wasting time, money and effort managing your digital campaigns
-</br></br>
+Being online business requires special marketing skills. Creating campaigns, managing campaigns and making sure that the money spent to get traffic from different advertising platforms became more challenging and time consuming.
+
+Being an online businesses you need to focus on the core functionality they do instead of wasting time, money and effort managing your digital campaigns.
 
 # Tasks
-</br>
+
 1. Create a RESTful ​ campaign ​ resource. Campaign data will be
-</br>
 a. Name
-</br>
+
 b. Country
-</br>
+
 c. Budget
-</br>
+
 d. Goal
-</br>
+
 e. category. If category is not provided you need to extract it from the provided
-</br></br>
+
 
 # Dummy category extraction service.
-</br>
+
 2. Create a reporting endpoint that accepts
-</br>
-a. Dimensions​ (used to group data by these fields)
-</br>
-b. Fields​ (Array of fields to return in each campaign)
-</br>
+
+a. Dimensions​ (used to group data by these fields).
+
+b. Fields​ (Array of fields to return in each campaign).
+
 c. Duration [​ start and end dates​ ]
-</br>
-3. Develop a UI to draw the analysis results generated from the analyze service (mentioned
-</br>
-in point 2)
-</br>
+
+3. Develop a UI to draw the analysis results generated from the analyze service (mentioned in point 2)
 
 # Example: 
-</br>
+
 if the provided data are
-</br>
+
 [{
 "name": "n1",
 "country": "USA",
